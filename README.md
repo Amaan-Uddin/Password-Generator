@@ -11,7 +11,7 @@ Welcome to the Password Generator application! This uncomplicated tool empowers 
 
 ## Access the Application
 
-You can access the Simple Password Generator by visiting passwordgenerator-gdsc.netlify.app.
+You can access the Simple Password Generator by visiting [passwordgenerator-gdsc.netlify.app](https://passwordgenerator-gdsc.netlify.app/).
 
 ## How it Works
 
@@ -19,7 +19,7 @@ The application operates seamlessly, using smart algorithms to generate password
 
 ## Getting Started
 
-1.  Visit passwordgenerator-gdsc.netlify.app.
+1.  Visit [passwordgenerator-gdsc.netlify.app](https://passwordgenerator-gdsc.netlify.app/).
 2.  Set your desired password length and choose character sets.
 3.  Click "Generate Password" to obtain your secure password.
 4.  Use the generated password for your accounts or purposes.
