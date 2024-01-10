@@ -35,7 +35,7 @@ const uniqueArray = [
 	'rRK',
 	'sS$5&',
 	'tTI1f',
-	'uUvV',
+	'uU',
 	'wWvV',
 	'xXyY',
 	'zZ2',
