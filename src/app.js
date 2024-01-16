@@ -50,8 +50,8 @@ const optionSet = new Set();
 let uniqueFlag = 0;
 
 optionSet.add(category.lower);
-switches.forEach((Switch) => {
-	Switch.addEventListener('click', (e) => {
+switches.forEach((btn) => {
+	btn.addEventListener('click', (e) => {
 		if (e.target.checked) {
 			if (e.target.dataset.value == 'unique') uniqueFlag = 1;
 			optionSet.add(category[e.target.dataset.value]);
@@ -69,26 +69,40 @@ function getRandomNumber(min, max) {
 }
 
 generateButton.addEventListener('click', () => {
+	// convert the optionSet into and Array using Array.from() and then invoke the .join() method to return the string of the array
 	let characterString = Array.from(optionSet).join('');
+
+	// get the range value form the dataset of rangeValue
 	let characterRange = rangeValue.dataset.range;
+
+	// initialize an empty string named passwordString, this will hold the password to be generated
 	let passwordString = '';
 
-	console.log(characterString);
-
+	// now get into a while loop till the characterRange becomes 0
 	while (characterRange) {
+		// get a random index using a formula within getRandomNumber() function
 		const randomIndex = getRandomNumber(0, characterString.length);
 
+		// the uniqueFlag is set when the `unique` switch is ON
 		if (!uniqueFlag) {
+			// generate a random password
 			passwordString += characterString[randomIndex];
 			characterRange--;
 		} else {
+			// the below code is executed when the `unique` flag is set
+
+			// get a random character from our characterString and add it to our passwordString
 			const randomChar = characterString[randomIndex];
 			passwordString += randomChar;
 
+			// now find the substring that has the random character and return the entire substring from our uniqueArray[]
 			const subString = uniqueArray.find((substring) => {
 				return substring.includes(randomChar);
 			});
 
+			// next we convert the substring to an array using Array.from() and apply a forEach() to iterate through
+			// each character and remove them from our characterString.
+			// This way all the similar characters are removed from the characterString
 			Array.from(subString).forEach((character) => {
 				characterString = characterString.replace(character, '');
 			});
